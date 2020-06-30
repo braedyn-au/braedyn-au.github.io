@@ -645,17 +645,20 @@ footer {
     position: relative;
     resize:both;
     max-width: 900px;
-    height: 200px;
+    max-height: 800px;
+    min-height: 220px;
     margin: 0 auto 30px auto;
     overflow: visible;
     background: #fff;
     border-radius: 4px;
+    object-fit: contain;
 }
 
 .project-image {
     float: left;
     height:auto ; 
-    width: 300px; 
+    max-width: 300px; 
+    max-height: 100px;
     // transform: translateY(30%);
     object-fit: contain;
     top:50%;
@@ -670,6 +673,7 @@ footer {
     transform: translateY(-50%);
     margin-left: 300px;
     padding: 15px;
+    object-fit: scale-down;
 
     h3 {
         font-size: 1.5em;
@@ -980,6 +984,7 @@ footer {
         top: auto;
         transform: none;
         overflow:auto;
+        object-fit: scale-down;
     }
 
     footer {

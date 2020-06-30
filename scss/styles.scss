@@ -644,14 +644,14 @@ footer {
 .project {
     position: relative;
     resize:both;
-    max-width: 900px;
-    max-height: 800px;
+    // max-width: 900px;
+    // max-height: 900px;
     min-height: 220px;
     margin: 0 auto 30px auto;
-    overflow: visible;
     background: #fff;
     border-radius: 4px;
-    object-fit: contain;
+    float: top;
+    height: fit-content;
 }
 
 .project-image {
@@ -673,7 +673,6 @@ footer {
     transform: translateY(-50%);
     margin-left: 300px;
     padding: 15px;
-    object-fit: scale-down;
 
     h3 {
         font-size: 1.5em;

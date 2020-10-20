@@ -10,8 +10,22 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+        #large-header {
+            background-color: black;
+        }
+        #fragment-canvas {
+            display: none!important;
+        }
+        @media (min-width: 480px) {
+            #fragment-canvas {
+                display: block!important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +65,14 @@
             <h1>Braedyn Au</h1>
             <h2>Physics Student</h2>
             <a href="https://drive.google.com/file/d/12atSohdOYyJUAMrRveTlKwssPwiSlgy2/view?usp=sharing" 
-            class="btn-rounded-white">Curriculum Vitae</a>
+            class="btn-rounded-white">Curriculum Vitae</i></a>
+            <br>
+            <a href="https://www.linkedin.com/in/braedyn-au/" 
+            class="btn-white"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/braedyn-au" 
+            class="btn-white"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://scholar.google.com/citations?hl=en&user=Li8djaoAAAAJ"
+            class="btn-white"><i class="fa fa-google" aria-hidden="true"></i></a>
         </div>
         <!-- End #lead-content -->
 
@@ -339,7 +360,9 @@
         <!-- End #contact-form -->
     </div>
     <!-- End #contact -->
-
+    <!-- <div class="large-header" id="large-header">
+        <canvas id="fragmant-canvas"></canvas>
+    </div> -->
     <footer>
         <div class="container">
             <div class="row">
@@ -382,6 +405,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script src="js/fragment-effect.js"></script>
 </body>
 
 </html>

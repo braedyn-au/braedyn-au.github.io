@@ -6,20 +6,6 @@
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // ----- Theme toggle -----
-  var themeBtn = document.querySelector('.theme-toggle');
-  function isDark() {
-    if (root.dataset.theme) return root.dataset.theme === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      var next = isDark() ? 'light' : 'dark';
-      root.dataset.theme = next;
-      try { localStorage.setItem('theme', next); } catch (e) {}
-    });
-  }
-
   // ----- Mobile menu -----
   var toggle = document.querySelector('.nav-toggle');
   var links = document.getElementById('nav-links');
@@ -60,12 +46,8 @@
   if (!canvas || !canvas.getContext) return;
   var ctx = canvas.getContext('2d');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var nodes = [], w = 0, h = 0, dpr = 1, running = false, raf = 0, color = '31, 92, 138';
+  var nodes = [], w = 0, h = 0, dpr = 1, running = false, raf = 0, color = '125, 187, 240';
   var LINK = 130;
-
-  function readColor() {
-    color = getComputedStyle(root).getPropertyValue('--node').trim() || color;
-  }
 
   function resize() {
     var r = canvas.getBoundingClientRect();
@@ -121,7 +103,6 @@
   function start() { if (!running && !reduce) { running = true; raf = requestAnimationFrame(step); } }
   function stop() { running = false; cancelAnimationFrame(raf); }
 
-  readColor();
   resize();
   var t;
   window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(resize, 150); });
@@ -132,9 +113,6 @@
   } else { start(); }
   document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
 
-  // Re-tint when the theme changes.
-  new MutationObserver(function () { readColor(); draw(); }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { readColor(); draw(); });
 })();
 
 // ----- Autoplay demo videos only while on screen (and not for reduced-motion users) -----

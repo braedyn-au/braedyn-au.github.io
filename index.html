@@ -1,432 +1,228 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Braedyn Au</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <style>
-        #large-header {
-            background-color: black;
-        }
-        #fragment-canvas {
-            display: none!important;
-        }
-        @media (min-width: 480px) {
-            #fragment-canvas {
-                display: block!important;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Braedyn Au</title>
+  <meta name="description" content="Braedyn Au, physics PhD candidate at Yale University studying the neural circuits of vision in Drosophila. Currently on the job market.">
+  <meta property="og:title" content="Braedyn Au">
+  <meta property="og:description" content="Physics PhD candidate at Yale studying how visual circuits in the fly brain compute self-motion and distance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://braedyn-au.github.io/">
+  <meta property="og:image" content="https://braedyn-au.github.io/images/me.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
-
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="nav-name" href="#top">Braedyn Au</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+        </button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="wrap hero-inner">
+        <img class="portrait" src="images/me.jpg" alt="Portrait of Braedyn Au" width="200" height="200">
+        <div>
+          <p class="eyebrow">PhD Candidate, Physics · Yale University</p>
+          <h1>Braedyn Au</h1>
+          <p class="lede">
+            Combining in vivo neural recordings and computational modelling to decode neural circuits.
+          </p>
+          <p class="status"><span class="status-dot" aria-hidden="true"></span>On the job market. <a href="#contact">Get in touch</a></p>
+          <ul class="links">
+            <li><a class="btn btn-primary" href="https://drive.google.com/file/d/12atSohdOYyJUAMrRveTlKwssPwiSlgy2/view?usp=sharing" target="_blank" rel="noopener">CV</a></li>
+            <li><a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=Li8djaoAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/braedyn-au/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Research -->
+    <section class="section" id="research">
+      <div class="wrap">
+        <h2 class="section-title">Research</h2>
+
+        <div class="about">
+          <p>
+            I am currently wrapping up my PhD in Physics with
+            <a href="https://clarklab.yale.edu/" target="_blank" rel="noopener">Dr. Damon Clark</a> at Yale University, where I use
+            2-photon microscopy and computational modelling to investigate the fly's sense of
+            direction, which it uses as a compass to navigate the world. I am interested in how the
+            brain forms internal representations of the world to guide navigation and decision
+            making. I am excited to dive deeper into higher cognitive behavior tasks and learn new
+            statistical modelling techniques.
+          </p>
+          <p>
+            Previously, I worked on membrane biophysics and super-resolution microscopy with
+            <a href="https://www.bcp.fu-berlin.de/en/chemie/biochemie/research-groups/ewers-group/mitarbeiter/Helge-Ewers.html" target="_blank" rel="noopener">Dr. Helge Ewers</a>
+            at Freie Universität Berlin and
+            <a href="https://snyder.ucalgary.ca/labs/live-cell-imaging/LCIoverview" target="_blank" rel="noopener">Dr. Pina Colarusso</a>
+            at the University of Calgary, and computational research on critical spreading processes
+            on neural networks and bipartite stock-trader networks with
+            <a href="https://profiles.ucalgary.ca/joern-davidsen" target="_blank" rel="noopener">Dr. Jörn Davidsen</a>
+            at the University of Calgary and
+            <a href="https://www1.spms.ntu.edu.sg/~cheongsa/" target="_blank" rel="noopener">Dr. Siew Ann Cheong</a>
+            at NTU Singapore.
+          </p>
+        </div>
+
+        <article class="feature">
+          <div class="feature-label">Current work · Yale</div>
+          <h3>The fly's internal compass</h3>
+          <p>
+            Flies keep track of which way they're facing with a compass-like population of neurons
+            that holds a persistent estimate of heading. That estimate gets updated by the fly's own
+            movements and anchored by visual landmarks. To investigate this circuit, I performed my
+            lab's first simultaneous recordings of behavior and neural population activity by
+            constructing a treadmill for flies and 3D 2p imaging tools. Together with computational
+            models, I hope to better understand how visual input shapes this internal representation
+            of direction. Paper coming soon!
+          </p>
+          <figure class="feature-media">
+            <video class="autoplay-video" src="assets/media/compass-demo.mp4" poster="assets/media/compass-demo-poster.jpg"
+              width="1280" height="720" muted loop playsinline controls preload="metadata"
+              aria-label="Closed-loop experiment: a fly walking on a ball steers a white bar while EPG neuron activity in the protocerebral bridge tracks the bar's position"></video>
+            <figcaption>
+              Closed loop: a fruit fly walks on an air-supported ball and lives in a virtual reality.
+              The fly's turns move a bar in the virtual reality as it would in the real world. Calcium
+              imaging (GCaMP6f) of compass neurons (EPG) shows a bump of activity that tracks the bar's
+              position, the fly's internal compass heading. Played at 1.5× speed.
+            </figcaption>
+          </figure>
+          <p class="feature-links">
+            <span class="feature-links-label">My new experimental method has allowed me to collaborate on other cool projects in the lab!</span>
+            <a href="https://doi.org/10.1016/j.cub.2025.09.008" target="_blank" rel="noopener">Distance estimation, <em>Curr. Biol.</em> 2025</a>
+            <a href="https://doi.org/10.1016/j.cub.2023.10.011" target="_blank" rel="noopener">Visual counterevidence, <em>Curr. Biol.</em> 2023</a>
+          </p>
+        </article>
+
+        <h3 class="subhead">Earlier projects</h3>
+        <div class="cards">
+          <article class="card">
+            <div class="card-meta">Toronto · Goubran Lab</div>
+            <h4>Whole-brain projectomes at single-axon resolution</h4>
+            <p>Deep-learning methods for tracing axons in cleared mouse brain tissue imaged with light-sheet microscopy.</p>
+            <a href="https://doi.org/10.1101/2025.11.14.688340" target="_blank" rel="noopener">Preprint (2025)</a>
+          </article>
+          <article class="card">
+            <div class="card-meta">Calgary · NTU Singapore</div>
+            <h4>Rebalancing cascades from overlapping portfolios</h4>
+            <p>Agent-based simulation of stock market trading to study rebalancing cascades across a bipartite stock-trader network.</p>
+            <a href="https://youtu.be/MxXLfUzpwWc" target="_blank" rel="noopener">Intro talk</a>
+          </article>
+          <article class="card">
+            <div class="card-meta">Calgary · Davidsen Group</div>
+            <h4>Criticality in Spreading Processes without Timescale Separation</h4>
+            <p>Simulation of branching processes with spontaneous activity on human fMRI derived neural networks. When neuronal avalanches merge, the dynamics at the critical point shift from one universality class to another.</p>          </article>
+          <article class="card">
+            <div class="card-meta">FU Berlin · Ewers Lab</div>
+            <h4>Magnetic nanoparticles for membrane manipulation</h4>
+            <p>Fluorescent magnetic nanoparticles combined with super-resolution microscopy to move membrane proteins on purpose and probe diffusion barriers in neurons.</p>
+            <a href="https://doi.org/10.1038/s41467-020-18087-3" target="_blank" rel="noopener">Paper (2020)</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="section section-alt" id="publications">
+      <div class="wrap">
+        <h2 class="section-title">Publications</h2>
+        <ol class="pubs">
+          <li class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <a class="pub-title" href="https://doi.org/10.1016/j.cub.2025.09.008" target="_blank" rel="noopener">Visual circuitry for distance estimation in <em>Drosophila</em></a>
+              <p class="pub-authors">Shomar JW, Wu E, <strong>Au B</strong>, Maier K, Zhou B-H, Matos NCB, Sager G, Santana GM, Tanaka R, Gish C, Clark DA</p>
+              <p class="pub-venue"><em>Current Biology</em> · <a href="https://doi.org/10.1101/2024.12.25.630346" target="_blank" rel="noopener">preprint</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <a class="pub-title" href="https://doi.org/10.1101/2025.11.14.688340" target="_blank" rel="noopener">Quantitative profiling of whole-brain connectomes at single-axon resolution using deep learning and high-resolution light sheet microscopy</a>
+              <p class="pub-authors">Attarpour A, Raffiee M, Xu T, Osmann J, Patel S, Yu F-Q, <strong>Au B</strong>, Clappison A, Biparva M, Zhu R, Crow A, Eshaghi Gharagoz B, Rozak MW, Aubert I, McLaurin J, Deisseroth K, Stefanovic B, Goubran M</p>
+              <p class="pub-venue"><em>bioRxiv</em> preprint</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2023</span>
+            <div>
+              <a class="pub-title" href="https://doi.org/10.1016/j.cub.2023.10.011" target="_blank" rel="noopener">Neural mechanisms to incorporate visual counterevidence in self-movement estimation</a>
+              <p class="pub-authors">Tanaka R, Zhou B-H, Agrochao M, Badwan BA, <strong>Au B</strong>, Matos NCB, Clark DA</p>
+              <p class="pub-venue"><em>Current Biology</em> · <a href="https://doi.org/10.1101/2023.01.04.522814" target="_blank" rel="noopener">preprint</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2020</span>
+            <div>
+              <a class="pub-title" href="https://doi.org/10.1038/s41467-020-18087-3" target="_blank" rel="noopener">Directed manipulation of membrane proteins by fluorescent magnetic nanoparticles</a>
+              <p class="pub-authors">Li J-H, Santos-Otte P, <strong>Au B</strong>, Rentsch J, Block S, Ewers H</p>
+              <p class="pub-venue"><em>Nature Communications</em></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2018</span>
+            <div>
+              <a class="pub-title" href="https://doi.org/10.11575/PRISM/34545" target="_blank" rel="noopener">Reconstructing super-resolution microscopy images to resolve t-loop structures of telomeres</a>
+              <p class="pub-authors"><strong>Au B</strong>, Adam N, Wazen R, Colarusso P</p>
+              <p class="pub-venue">University of Calgary, PRISM</p>
+            </div>
+          </li>
+        </ol>
+        <p class="note">Full list on <a href="https://scholar.google.com/citations?hl=en&amp;user=Li8djaoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="wrap contact">
+        <div>
+          <h2 class="section-title">Get in touch</h2>
+          <p>I'm currently on the job market. If you have a role that fits, or want to talk about research or collaborations, send me a note.</p>
+        </div>
+        <form class="contact-form" method="POST" action="https://formspree.io/xzbjaqkw">
+          <input type="hidden" name="_subject" value="Contact request from personal website">
+          <label>Email<input type="email" name="_replyto" autocomplete="email" required></label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Braedyn Au</p>
+      <p><a href="https://github.com/braedyn-au" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/braedyn-au/" target="_blank" rel="noopener">LinkedIn</a> · <a href="#top">Back to top ↑</a></p>
     </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
+  </footer>
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Braedyn Au</h1>
-            <h2>Physics Student</h2>
-            <a href="https://drive.google.com/file/d/12atSohdOYyJUAMrRveTlKwssPwiSlgy2/view?usp=sharing" 
-            class="btn-rounded-white">Curriculum Vitae</i></a>
-            <br>
-            <a href="https://www.linkedin.com/in/braedyn-au/" 
-            class="btn-white"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a href="https://github.com/braedyn-au" 
-            class="btn-white"><i class="fa fa-github" aria-hidden="true"></i></a>
-            <a href="https://scholar.google.com/citations?hl=en&user=Li8djaoAAAAJ"
-            class="btn-white"><i class="fa fa-google" aria-hidden="true"></i></a>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
-    </div>
-    <!-- End #lead -->
-
-    <div id="about" >
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 " style="text-align:center; float: none; margin-right: auto; margin-left: auto;"></div>
-                    <div class="row">
-                        <div class="col-md-4">
-                        </div>
-                        <div class="col-md-4" style='text-align:center;'>
-                            <h2 class="heading" style="transform: translate(0,-45%);">About Me</h2>
-                        </div>
-                        <div class="col-md-4">   
-                        </div>
-                    </div>   
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4" style="text-align:center;">
-                    <img style= 'height:230px ; transform: translate(0,-20%); object-fit: contain' src="images/me.jpg" />
-                </div>
-                <div class="col-md-8">
-                    <p> Welcome to my corner of the internet! I am a second year PhD Physics student at Yale University interested in the neural circuits of vision in <em>Drosophila</em>. My interests stemmed from first studying the biophysics of neuron membranes.
-                        My scope changed to a more macroscopic scale when I began to study the whole brain as a complex system. Having dabbled at the scales of single-cell and whole brain, I found a happy balance at the circuit level where I try to uncover
-                        how networks of neurons perform algorithms. Inspired by the field of computer vision, I dedicated my PhD to studying the neural circuits of vision.
-                    </p>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #about -->
-
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-
-            <div data-date="June 2021 – Present">
-                <h3>Yale University</h3>
-                <h4>PhD Student</h4>
-                <p>
-                    Supervisor: Damon Clark
-                </p>
-            </div>
-
-            <div data-date="May 2020 – Present">
-                <h3>University of Toronto</h3>
-                <h4>Remote Medical Biophysics Research Student</h4>
-                <p>
-                    Supervisor: Maged Goubran
-                    <br>    · Collaboration with Li Ye (Scripps Research) and Ailey Crow (Stanford) to apply modern
-                    deep-learning techniques for single-axon tracing in light microscopy for multimodal image registration with
-                    diffusion MRI and connectivity analysis
-                    <br>    · Developed and implemented pipelines for data preparation, labelling, training, and inference on local and
-                    remote Compute Canada high-performance computing hardware
-                    <br>    · Tested different deep-learning architectures including U-net and flood filling networks
-                    <br><em>Volunteer position conducted remotely due to COVID-19</em>
-                </p>
-            </div>
-
-            <div data-date="May 2020 – May 2021">
-                <h3>Nanyang Technological University/University of Calgary</h3>
-                <h4>Remote Undergraduate Researcher</h4>
-                <p>
-                    Supervisor: Siew Ann Cheong and Jörn Davidsen 
-                    <br>    · Initiated collaborations between the Complexity Institute and the Complexity Science Group studying systematic risks of financial portfolio overlap and criticality in the stock market
-                    <br>    · Developed and implemented numerical simulations modelling financial portfolios on a bipartite network with
-                    varying degrees of overlap and unique trading dynamics to study cascades of portfolio re-balancing
-                    <br>    · Analyzed simulated and real-world data from a statistical physics point of view
-                    <br><em>Funded by the University of Calgary in lieu of the Mitacs Globalink Research Award due to COVID-19. This work resulted in an oral presentation at a national conference and is continued towards an Honours Thesis.</em>
-                </p>
-            </div>
-
-            <div data-date="September 2019 – December 2019">
-                <h3>University of Calgary</h3>
-                <h4>NSERC Undergraduate Research Student</h4>
-                <p>
-                    Supervisor: Jörn Davidsen
-                    <br>    · Demonstrated criticality on various real biological neural networks while undergoing the branching process
-                    with spontaneous activity
-                    <br>    · Implemented numerical simulations and applied statistical data analysis and visualization to classify the
-                    resulting dynamics into specific universality classes
-                    <br>    · Implemented high-performance computers to parse diffusion MRI data for generating networks with up to 14
-                        million nodes.
-                    <br><em>This work resulted in 2 presentations at regional conferences and was funded by the Natural Sciences and
-                    Engineering Research Council of Canada Undergraduate Student Research Award </em>
-                </p>
-            </div>
-
-            <div data-date="June 2019 – September 2019">
-                <h3>Freie Universität Berlin</h3>
-                <h4>DAAD-RISE Undergraduate Research Student</h4>
-                <p>
-                    Supervisor: Helge Ewers and Jia Hui Li
-                    <br>    · Developed a new method combining directed manipulation of membrane proteins by fluorescent magnetic
-                    nanoparticles with super-resolution microscopy to investigate nanoscale biological structures
-                    <br>    · Demonstrated that neuronal actin forms evenly spaced ring-like structures following a periodicity of ∼180-190
-                    nm along axonal shafts using light microscopy
-                    <br>    · Developed analysis code as well as a deep-learning pipeline using MASK-RCNN to identify cellular structures
-                    within images
-                    <br><em>This work resulted in 1 manuscript in Nature Communications, 1 conference proceedings paper, as well
-                        as 4 presentations at international, national, and local conferences. This work was funded by the Deutscher
-                        Akademischer Austauschdienst and Mitacs</em>
-                </p>
-            </div>
-
-            <div data-date="May 2018 – August 2018">
-                <h3>University of Calgary</h3>
-                <h4>Optical Imaging Assistant</h4>
-                <p>
-                    Supervisor: Pina Collarusso and Rima-Marie Wazen
-                    <br>    · Developed pipelines for computational super-resolution microscopy image reconstruction and analysis via
-                    traditional and deep-learning methods
-                    <br>    · Demonstrated that human telomeres form t-loop like structures at a nanometer scale using light microscopy
-                    <br><em> This work resulted in 1 presentation at a local symposium and was funded by Canada Summer Jobs. </em> 
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End #experience -->
-
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        
-        <div class="education-block">
-            <h3>Yale University</h3>
-            <span class="education-date">Aug 2021 - Present</span>
-            <h4>PhD Physics</h4>
-            <p>Part of Yale's Integrated Graduate Program in Physical and Engineering Biology program</p>
-        </div>
-	    <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>Cold Spring Harbor Laboratory</h3>
-            <span class="education-date">July 2022</span>
-            <h4><em>Drosophila</em> Neurobiology: Genes, Circuits & Behavior</h4>
-        </div>
-
-        <div class="education-block">
-            <h3>University of Calgary</h3>
-            <span class="education-date">Sept 2016 - May 2021</span>
-            <h4>BSc Physics Honours</h4>
-  
-            <p>
-                Thesis: Modelling overlapping portfolio networks and re-balancing cascades in the stock market
-                <br>
-                Expected First Class Honours
-                <br>    · Statistical Mechanics I/II     (A+/A+)
-                <br>    · Computational Physics I/II/III    (B+/A/TBA)
-                <br>    · Electromagnetic Theory I/II/III   (A+/A/A)
-                <br>    · Mathematical Methods in Physics   (A)
-                <br>    · Solid State Physics   (A+)
-                <br>    · Nonlinear Dynamics and Chaos (TBA) 
-
-
-                
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>University of Hong Kong</h3>
-            <span class="education-date">Jan 2019 - May 2019</span>
-            <h4>Exchange Semester</h4>
-            <p>
-                4.08/4.30 GPA 
-                <br> Lots of fun 
-
-            </p>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img style= 'height:auto ; width: 300px; object-fit: contain' src="images/overlapstocks.png" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Re-balancing cascades on the stock market due to overlapping portfolios</h3>
-                        <p>
-                            Overlapping portfolios create hidden systematic risks which are not addressed
-                             in Modern Portfolio Theory. We are working on addressing this 
-                            risk through a dynamic complex network perspective. (Image from Delpini et al. 2019)
-                        </p>
-                        <a href="https://youtu.be/MxXLfUzpwWc">View intro presentation</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img style= 'height:auto ; width: 300px; object-fit: contain' src="images/fMRI clusters.png" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Criticality on biological neural networks</h3>
-                        <p>
-                            The brain is an extremely complex system. We do not know exactly how it functions,
-                             but expirements have shown evidence of critical behaviour similar to that 
-                             of a continuous phase transition. To study this computationally, we apply the branching process with spontaneous activity
-                             on real biological neural networks obtained via diffusion MRI. Preliminary results show that criticality with spontaneous
-                             activity is characterized by a transition from directed percolation to undirected percolation universality classes due to the merging
-                             of neuronal avalanches. (Image from Tagliazucchi et al. 2012)
-                        </p>
-                        <a href="https://www.youtube.com/watch?v=MxXLfUzpwWc">View Project Poster</a>
-                        <br> 
-                        <a href="https://arxiv.org/abs/1908.08163">View related paper by Daniel Korchinski</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img style= 'height:auto ; transform: translate(10%,-21%); width: 230px; object-fit: contain' src="images/clarity.png" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>DeepTrace </h3>
-                        <p>
-                            Biological neural networks of the brain and their alterations are a heavily researched topic in the field neurological disorders.
-                            Multimodal Image Registration And Connectivity anaLysis (MIRACL) is an automated pipeline that combines brain maps from various methods such as microscopy and diffusion MRI. To improve on the MIRACL pipeline, we
-                            are working on axon tracing in 3D CLARITY light microscopy images using modern deep-learning methods. (Goubran et al. 2019)
-                        </p>
-                        <a href="https://www.nature.com/articles/s41467-019-13374-0">View Paper by Dr. Goubran</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img style= 'height:auto ; transform: translate(-2%,-15%); width: 310px; object-fit: contain' src="images/mnp.png" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Directed manipulation of fluorescent magnetic nanoparticles </h3>
-                        <p>
-                            Membrane diffusion barriers are required in maintaining cellular identity. For example, the axon and dendrites of a neuron perform 
-                            drastically different tasks and thus will contain different biochemicals. Therefore, a diffusion barrier must exist 
-                            between the two to maintain their distinct identities. Loss of this identity has been shown to correspond with ailments such as bipolar disorder.
-                            To study these barriers, we developed a novel method using fluorescent magnetic nanoparticles. (Li et al. 2019)
-                        </p>
-                        <a href="https://www.nature.com/articles/s41467-020-18087-3">View paper in Nature Communications</a> 
-                        <br>
-                        <a href="https://drive.google.com/file/d/1DkcbEntbfSRsOYaz5ab_LvHCTDMSIb29/view?usp=sharing">View poster</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #projects -->
-
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>MATLAB</li>
-            <li>FORTRAN</li>
-            <li>RStudio</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-        <ul>
-            <li>Slurm</li>
-            <li>Git</li>
-            <li>Bash</li>
-            <li>High-Performance Computing</li>
-            <li>Deep-learning</li>
-            <li>ImageJ/FIJI</li>
-            <li>Microscopy</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
-
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/xzbjaqkw">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-    <!-- <div class="large-header" id="large-header">
-        <canvas id="fragmant-canvas"></canvas>
-    </div> -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; 2020 Braedyn Au
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/braedyn-au" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <!-- <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        </li> -->
-                        <li>
-                            <a href="https://www.linkedin.com/in/braedyn-au/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/Braedyn.Au" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <!-- <li>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-    <script src="js/fragment-effect.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
-
 </html>
